@@ -1,0 +1,44 @@
+﻿@using EntityLayer
+@model List<çalışanlar>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID </th>
+                    <th>AD </th>
+                    <th>SOYAD </th>
+                    <th>ALAN </th>
+                    <th>MAİL </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.ad</td>
+                        <td>@item.soyad</td>
+                        <td>@item.alan</td>
+                        <td>@item.mail</td>
+                        <td><a href="/Çalışanlar/DeleteÇalışanlar/@item.ID" class="btn btn-dark">Sil</a></td>
+                        <td><a href="/Çalışanlar/EditÇalışanlar/@item.ID" class="btn btn-outline-danger">Güncelle</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a href="/Çalışanlar/AddÇalışanlar/" class="btn btn-primary">Yeni Çalışan Ekle</a>
+    </div>
+</body>
+</html>
